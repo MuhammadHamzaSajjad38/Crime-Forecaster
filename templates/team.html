@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+{% block title %}Meet the Team{% endblock %}
+
+{% block content %}
+<div class="container content-page">
+    <div class="text-center my-5">
+        <h1 class="display-4">Development Team</h1>
+        <p class="lead text-muted">The group of students from XYZ University behind this project.</p>
+    </div>
+
+    <!-- The g-4 class adds a nice gap between the cards -->
+    <div class="row g-4 justify-content-center">
+        <!-- Developer 1 -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card team-card text-center">
+                <!-- *** CHANGED: Removed rounded-circle and team-img class for now *** -->
+                <img src="{{ url_for('static', filename='images/team/dev1.jpg') }}" class="card-img-top" alt="Developer 1">
+                <div class="card-body">
+                    <h5 class="card-title">Developer 1</h5>
+                    <p class="card-text text-secondary">Project Lead & Backend Development</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Developer 2 -->
+        <div class="col-md-6 col-lg-4">
+            <div class="card team-card text-center">
+                <!-- *** CHANGED: Removed rounded-circle and team-img class for now *** -->
+                <img src="{{ url_for('static', filename='images/team/dev2.jpg') }}" class="card-img-top" alt="Developer 2">
+                <div class="card-body">
+                    <h5 class="card-title">Developer 2</h5>
+                    <p class="card-text text-secondary">Data Analysis & Modeling</p>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}

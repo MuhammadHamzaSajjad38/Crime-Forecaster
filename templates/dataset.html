@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container content-page">
+    <div class="text-center my-5">
+        <h1 class="display-4">📊 Data Insights</h1>
+        <p class="lead text-muted">Exploring the patterns and trends within the Chicago crime dataset.</p>
+    </div>
+
+    <!-- Section 1: Crime Types and Locations -->
+    <div class="row align-items-center mb-5">
+        <div class="col-lg-7">
+            <h3>Top 15 Most Frequent Crime Types</h3>
+            <p>The analysis reveals that "Theft" is by far the most common crime category, followed by "Battery" and "Criminal Damage." This highlights the prevalence of property and personal contact crimes in the dataset.</p>
+        </div>
+        <div class="col-lg-5">
+            <!-- Changed to .jpg -->
+            <img src="{{ url_for('static', filename='images/eda/top_15_crimes.jpg') }}" class="img-fluid rounded shadow-lg" alt="Top Crime Types">
+        </div>
+    </div>
+    <hr class="my-5">
+
+    <!-- Section 2: Temporal Patterns (Hour and Month) -->
+    <h3 class="text-center mb-4">Temporal Crime Patterns</h3>
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <div class="card bg-dark-card h-100">
+                <!-- Changed to .jpg -->
+                <img src="{{ url_for('static', filename='images/eda/crimes_by_hour.jpg') }}" class="card-img-top p-2" alt="Crimes by Hour">
+                <div class="card-body">
+                    <h5 class="card-title">Crimes by Hour of the Day</h5>
+                    <p class="card-text">Crime incidents peak in the evening hours, particularly between 6 PM and 10 PM. A significant drop occurs in the early morning, with the lowest activity around 5 AM, before rising again during the day.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card bg-dark-card h-100">
+                <!-- Changed to .jpg -->
+                <img src="{{ url_for('static', filename='images/eda/crimes_by_month.jpg') }}" class="card-img-top p-2" alt="Crimes by Month">
+                <div class="card-body">
+                    <h5 class="card-title">Crimes by Month</h5>
+                    <p class="card-text">There is a clear seasonal trend, with crime rates increasing during the warmer summer months (May to August) and decreasing during the colder winter months. This is a common pattern in urban environments.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="my-5">
+
+    <!-- Section 3: Crime Context (Arrest and Domestic) -->
+    <h3 class="text-center mb-4">Context of Crime Incidents</h3>
+    <div class="row">
+        <div class="col-md-6 mb-4">
+             <div class="card bg-dark-card h-100">
+                <!-- Changed to .jpg -->
+                <img src="{{ url_for('static', filename='images/eda/arrest_vs_non_arrest.jpg') }}" class="card-img-top p-2" alt="Arrest vs Non-Arrest">
+                <div class="card-body">
+                    <h5 class="card-title">Arrest vs. Non-Arrest Crimes</h5>
+                    <p class="card-text">A significant majority of reported crimes do not result in an immediate arrest, indicating the challenges in law enforcement response and case clearance.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card bg-dark-card h-100">
+                 <!-- Changed to .jpg -->
+                 <img src="{{ url_for('static', filename='images/eda/domestic_pie_chart.jpg') }}" class="card-img-top p-2" alt="Domestic Crime Ratio">
+                <div class="card-body">
+                    <h5 class="card-title">Domestic vs. Non-Domestic Crimes</h5>
+                    <p class="card-text">Approximately 12.8% of crimes in the dataset are classified as domestic incidents. While a minority, this still represents a substantial number of cases occurring in residential settings.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

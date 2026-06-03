@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+{% block title %}About The Project{% endblock %}
+
+{% block content %}
+<div class="container content-page">
+    <div class="text-center my-5">
+        <h1 class="display-4">Project Methodology & Results</h1>
+        <p class="lead text-muted">A technical overview of the data processing, modeling, and performance evaluation.</p>
+    </div>
+
+    <!-- Section 1: Methodology -->
+    <div class="card bg-dark-card shadow-lg mb-5">
+        <div class="card-body p-5">
+            <h3 class="card-title mb-4"><i class="fas fa-cogs me-2 text-primary"></i>Our Approach</h3>
+            <p>This project tackles the challenge of crime prediction by implementing a complete data science pipeline. Our methodology involved several key stages:</p>
+            <ol class="list-group list-group-numbered list-group-flush">
+                <li class="list-group-item bg-transparent text-light"><strong>Data Ingestion & Cleaning:</strong> We consolidated over 7 million crime records from the City of Chicago, handling missing values and dropping irrelevant columns.</li>
+                <li class="list-group-item bg-transparent text-light"><strong>Feature Engineering:</strong> We extracted crucial features from the dataset, such as the year, month, day, and hour of the crime, and encoded categorical data like location descriptions into a machine-readable format.</li>
+                <li class="list-group-item bg-transparent text-light"><strong>Model Training:</strong> We trained three diverse classification models: a Random Forest, a Multi-layer Perceptron (Neural Network), and K-Nearest Neighbors.</li>
+                <li class="list-group-item bg-transparent text-light"><strong>Ensemble Modeling:</strong> To maximize accuracy, we combined the individual models into a powerful **Voting Ensemble**, which leverages the strengths of each classifier to make a more robust final prediction.</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Section 2: Final Model Performance -->
+    <h3 class="text-center mb-4">Final Model Performance: Voting Ensemble</h3>
+    <div class="row g-4 text-center mb-5">
+        <div class="col-md-3">
+            <div class="result-metric-card">
+                <div class="result-metric-value">0.9969</div>
+                <div class="result-metric-label">Accuracy</div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="result-metric-card">
+                <div class="result-metric-value">0.9969</div>
+                <div class="result-metric-label">Precision</div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="result-metric-card">
+                <div class="result-metric-value">0.9969</div>
+                <div class="result-metric-label">Recall</div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="result-metric-card">
+                <div class="result-metric-value">0.9969</div>
+                <div class="result-metric-label">F1-Score</div>
+            </div>
+        </div>
+    </div>
+    <hr class="my-5">
+
+    <!-- Section 3: Visual Evaluation Metrics -->
+    <h3 class="text-center mb-4">Model Evaluation Visuals</h3>
+    <div class="row g-4">
+        <div class="col-lg-6">
+            <div class="card bg-dark-card h-100">
+                <img src="{{ url_for('static', filename='images/model/model_comparison_metrics.jpg') }}" class="card-img-top p-2" alt="Model Comparison Metrics">
+                <div class="card-body">
+                    <h5 class="card-title">Model Comparison</h5>
+                    <p class="card-text">This chart clearly shows the superior performance of the Voting Ensemble model compared to the individual base learners, validating our ensemble approach.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="card bg-dark-card h-100">
+                <img src="{{ url_for('static', filename='images/model/roc_curve.jpg') }}" class="card-img-top p-2" alt="ROC Curve">
+                <div class="card-body">
+                    <h5 class="card-title">ROC Curve Analysis</h5>
+                    <p class="card-text">The ROC curve illustrates the model's exceptional ability to distinguish between different crime classes. An Area Under the Curve (AUC) of 1.00 for all categories indicates a highly effective and near-perfect classifier.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+

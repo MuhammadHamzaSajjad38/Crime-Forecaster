@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container content-page">
+    <div class="text-center my-5">
+        <h1 class="display-4">🤖 Technology & Models</h1>
+        <p class="lead text-muted">A deep dive into the machine learning algorithms powering our crime prediction engine.</p>
+    </div>
+
+    <!-- Section: Introduction to our Approach -->
+    <div class="row justify-content-center mb-5">
+        <div class="col-lg-8 text-center">
+            <h3>Our Modeling Approach</h3>
+            <p>To ensure the highest accuracy and robustness, we did not rely on a single algorithm. Instead, we explored multiple state-of-the-art machine learning techniques to understand the complex patterns in the Chicago crime dataset. We analyzed the performance of Random Forest, a Multi-Layer Perceptron (Neural Network), and Long Short-Term Memory (LSTM) networks before creating a final, powerful ensemble model.</p>
+        </div>
+    </div>
+    <hr class="my-5">
+
+    <!-- Section: Algorithm Explanations in a 3-Column Layout -->
+    <div class="row">
+        <!-- Card 1: Random Forest -->
+        <div class="col-lg-4 mb-4 d-flex align-items-stretch">
+            <div class="card bg-dark-card text-center">
+                <img src="{{ url_for('static', filename='images/model/random_forest_diagram.jpg') }}" class="card-img-top p-3" alt="Random Forest Diagram" style="height: 200px; object-fit: contain;">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Random Forest</h5>
+                    <p class="card-text flex-grow-1">Random Forest is a powerful ensemble learning method that operates by constructing a multitude of decision trees at training time. For classification, the final decision is made by a majority vote of all the trees. It excels at handling complex, non-linear data and is highly resistant to overfitting.</p>
+                    <p class="card-text"><small class="text-muted"><strong>Role in Project:</strong> Used as a strong baseline and a key component of our final voting ensemble due to its high accuracy.</small></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2: Neural Network (MLP) -->
+        <div class="col-lg-4 mb-4 d-flex align-items-stretch">
+            <div class="card bg-dark-card text-center">
+                <img src="{{ url_for('static', filename='images/model/neural_network_diagram.png') }}" class="card-img-top p-3" alt="Neural Network Diagram" style="height: 200px; object-fit: contain;">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Neural Network (MLP)</h5>
+                    <p class="card-text flex-grow-1">A Multi-Layer Perceptron (MLP) is a class of feedforward artificial neural network. It consists of at least three layers of nodes: an input layer, a hidden layer, and an output layer. MLPs are excellent at learning complex patterns and are capable of approximating any continuous function, making them ideal for classification tasks.</p>
+                    <p class="card-text"><small class="text-muted"><strong>Role in Project:</strong> Provided a deep learning perspective and contributed a different "view" of the data to our ensemble model.</small></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3: LSTM -->
+        <div class="col-lg-4 mb-4 d-flex align-items-stretch">
+            <div class="card bg-dark-card text-center">
+                <img src="{{ url_for('static', filename='images/model/lstm_diagram.png') }}" class="card-img-top p-3" alt="LSTM Diagram" style="height: 200px; object-fit: contain;">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">LSTM (Long Short-Term Memory)</h5>
+                    <p class="card-text flex-grow-1">LSTMs are a special kind of Recurrent Neural Network (RNN) capable of learning long-term dependencies. They are specifically designed to avoid the long-term dependency problem by remembering information for long periods. This makes them highly effective for time-series data, such as crime patterns over time.</p>
+                    <p class="card-text"><small class="text-muted"><strong>Role in Project:</strong> Explored for its potential to capture temporal sequences in crime data, though the final model prioritized location-based features.</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: Final Model Explanation -->
+    <div class="row justify-content-center mt-4">
+        <div class="col-lg-8 text-center">
+            <h3>The Final Ensemble Model</h3>
+            <p>Our final, deployed model is a **Voting Classifier Ensemble**. This meta-estimator combines the predictions from our Random Forest, MLP, and K-Nearest Neighbors models. By using a 'hard' voting mechanism, it selects the crime type that is predicted most frequently by the individual classifiers. This approach leverages the diverse strengths of each algorithm to produce a more accurate and reliable final prediction than any single model could achieve on its own.</p>
+            <a href="{{ url_for('about') }}" class="btn btn-primary-custom mt-3">View Model Results</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
