@@ -1,15 +1,3 @@
----
-title: Crime Forecaster
-emoji: 🔍
-colorFrom: indigo
-colorTo: blue
-sdk: docker
-app_port: 7860
-pinned: false
-license: mit
-short_description: AI-powered crime type prediction using Chicago crime data
----
-
 # 🔍 Crime Forecaster — AI-Powered Crime Type Prediction
 
 [![Hugging Face Spaces](https://img.shields.io/badge/Live%20Demo-%F0%9F%A4%97%20Hugging%20Face%20Space-blue?style=for-the-badge)](https://huggingface.co/spaces/Hamzasajjad38/Crime-Forecaster)
