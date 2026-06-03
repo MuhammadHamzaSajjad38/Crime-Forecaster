@@ -70,7 +70,7 @@ The complete training notebook with EDA, preprocessing, model training, and eval
 ├── Dockerfile              # Docker config for HF Spaces
 ├── requirements.txt        # Python dependencies
 ├── models/                 # Trained model & preprocessing artifacts
-│   ├── crime_model_v2.pkl
+│   ├── crime_model_v2.pkl         # Due to Memory issue on github --- Models folder is available on my Hugging Face Account
 │   ├── feature_encoders_v2.pkl
 │   ├── feature_columns_v2.pkl
 │   ├── scaler_v2.pkl
